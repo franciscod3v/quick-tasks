@@ -17,7 +17,7 @@
     color: var(--color-categoria);
     font-family: var(--letra-nombre);
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 .tareaCard-container div div .priority-token {

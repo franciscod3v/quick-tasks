@@ -4,7 +4,7 @@ export const TareaCard = () => {
   return (
     <div className="tareaCard-container container p-3 rounded-4">
       <div className='row px-3'>
-        <h3 className="col-8 nombre-tarea">Soy una tarea</h3>
+        <h3 className="col-8 nombre-tarea">Soy una tarea largaa</h3>
         <div className='col-4 d-flex gap-2 justify-content-center align-items-center'>
           <button className='border-0'>
             <i class="bi bi-check-circle-fill"></i>
