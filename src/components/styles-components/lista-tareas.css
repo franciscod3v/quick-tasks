@@ -8,18 +8,10 @@
     --fondo-lista: #D5CCFF;
 }
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    height: 100vh;
+.contenedor-lista {
     background-color: var(--fondo-lista);
 }
 
-@media screen and (min-width: 1024px) {
-    
-    body {
-        width: 80%;
-    }
+.title {
+    color: var(--color-categoria);
 }

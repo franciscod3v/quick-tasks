@@ -5,6 +5,11 @@
     --prioridad-high: #E42C5F;
     --prioridad-medium: #F9D100;
     --prioridad-low: #2D41A7;
+    --fondo-lista: #D5CCFF;
+}
+
+.tareaCard-container {
+    background-color: var(--fondo-tarea);
 }
 
 
@@ -12,15 +17,11 @@
     color: var(--color-categoria);
     font-family: var(--letra-nombre);
     font-weight: bold;
-    font-size: 16px;
-}
-
-.tareaCard-container div .priority {
-
+    font-size: 1.6rem;
 }
 
 .tareaCard-container div div .priority-token {
-    width: 20px;
+    width: 2rem;
     background-color: red;
     color: transparent;
     border-radius: 20%;
@@ -28,4 +29,32 @@
 
 .tareaCard-container div .category {
     color: var(--color-categoria);
+    font-size: 1.4rem;
+}
+
+button {
+    background-color: var(--fondo-tarea);
+}
+
+button .bi-check-circle-fill {
+    color: green;
+    font-size: 2rem;
+}
+
+button .bi-x-circle-fill {
+    color: var(--color-categoria);
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 375px) {
+    
+    button .bi-check-circle-fill {
+        color: green;
+        font-size: 2rem
+    }
+    
+    button .bi-x-circle-fill {
+        color: var(--color-categoria);
+        font-size: 2rem
+    }
 }
