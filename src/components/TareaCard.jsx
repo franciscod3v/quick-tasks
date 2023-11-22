@@ -2,7 +2,7 @@ import './styles-components/tarea-card.css'
 
 export const TareaCard = () => {
   return (
-    <div className="tareaCard-container container p-3 rounded-4">
+    <div className="tareaCard-container container p-3 rounded-4 my-2">
       <div className='row px-3'>
         <h3 className="col-8 nombre-tarea">Soy una tarea largaa</h3>
         <div className='col-4 d-flex gap-2 justify-content-center align-items-center'>
