@@ -1,31 +1,29 @@
 import React, { useState } from 'react'
+import { useGlobalState } from '../context/GlobalState'
 
-export const InputTarea = ({ createNewTask }) => {
+export const InputTarea = () => {
 
-    const [tarea, setTarea] = useState('')
+    const { addTask } = useGlobalState()
 
-    const handleSubmit = (e) => {
+    const [nameTask, setNameTask] = useState()
 
+    const onSubmit = (e) => {
         e.preventDefault()
-
-        if (tarea.trim() === '') {
-            alert('Tarea vacía')
-            return
-        }
-
-        createNewTask(tarea)
-
-        setTarea('')
+        addTask({
+            id: window.crypto.randomUUID(),
+            nameTask,
+            status: false
+        })
     }
 
     return (
         <form
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
             className='d-flex justify-content-center gap-2 my-2'>
             <input
                 type="text"
-                value={tarea}
-                onChange={(e) => setTarea(e.target.value)}
+                value={nameTask}
+                onChange={(e) => setNameTask(e.target.value)}
                 placeholder='Nueva tarea'
             />
             <button>Add Task</button>
