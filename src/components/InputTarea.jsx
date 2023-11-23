@@ -1,35 +1,34 @@
 import React, { useState } from 'react'
 
-export const InputTarea = () => {
+export const InputTarea = ({ createNewTask }) => {
 
     const [tarea, setTarea] = useState('')
 
-    const [listaTareas, setListaTareas] = useState([])
+    const handleSubmit = (e) => {
 
-    const agregarTarea = () => {
+        e.preventDefault()
 
         if (tarea.trim() === '') {
             alert('Tarea vacía')
             return
         }
 
-        setListaTareas(tareasGuardadas => [...tareasGuardadas, tarea])
+        createNewTask(tarea)
 
+        setTarea('')
     }
 
-    const test = (e) => {alert('GAA')}
     return (
         <form
-            onSubmit={test}
+            onSubmit={handleSubmit}
             className='d-flex justify-content-center gap-2 my-2'>
             <input
                 type="text"
                 value={tarea}
                 onChange={(e) => setTarea(e.target.value)}
                 placeholder='Nueva tarea'
-                className=''
             />
-            <button>Add</button>
+            <button>Add Task</button>
         </form>
     )
 }
