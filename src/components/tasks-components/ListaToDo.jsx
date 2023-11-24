@@ -1,6 +1,6 @@
-import { useGlobalState } from "../context/GlobalState"
+import { useGlobalState } from "../../context/GlobalState"
 import { TareaCard } from "./TareaCard"
-import './styles-components/lista-tareas.css'
+import '../styles-components/lista-tareas.css'
 
 export const ListaToDo = () => {
 
@@ -24,7 +24,7 @@ export const ListaToDo = () => {
                     <div className='d-flex flex-column gap-2'>
                         {
                             tasks.map(task => (
-                                task.status === true ? <TareaCard key={task.id} task={task} /> : null
+                                task.status === true ? <TareaCard key={task.id} task={task} buttonDone={false}/> : null
                             ))
                         }
                     </div>

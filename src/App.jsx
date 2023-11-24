@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
-import { InputTarea } from './components/InputTarea'
-import { ListaToDo } from './components/ListaToDo'
+import { InputTarea } from './components/tasks-components/InputTarea'
+import { ListaToDo } from './components/tasks-components/ListaToDo'
 import { GlobalProvider } from './context/GlobalState'
 
 export const App = () => {
