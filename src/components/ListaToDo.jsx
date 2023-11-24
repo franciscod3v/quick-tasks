@@ -14,7 +14,7 @@ export const ListaToDo = () => {
                     <div className='d-flex flex-column gap-2'>
                         {
                         tasks.map(task => (
-                            <TareaCard key={task.id} task={task} buttonCheck={true} />
+                            task.status === false ? <TareaCard key={task.id} task={task}/> : null
                         ))}
                     </div>
 
@@ -22,6 +22,11 @@ export const ListaToDo = () => {
                 <div className='col-12 col-md-6 my-2'>
                     <h2 className='px-2 title'>Done <i className="bi bi-clipboard-check"></i></h2>
                     <div className='d-flex flex-column gap-2'>
+                        {
+                            tasks.map(task => (
+                                task.status === true ? <TareaCard key={task.id} task={task} /> : null
+                            ))
+                        }
                     </div>
                 </div>
             </div>

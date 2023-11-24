@@ -29,6 +29,13 @@ export const GlobalProvider = ({ children }) => {
         })
     }
 
+    const modifiedTask = (id) => {
+        dispatch({
+            type: 'MODIFIED_TASK',
+            payload: id
+        })
+    }
+
     const [state, dispatch] = useReducer(AppReducer, initialState,
         () => {
             const localData = localStorage.getItem('tasks')
@@ -44,7 +51,8 @@ export const GlobalProvider = ({ children }) => {
             value={{
                 tasks: state.tasks,
                 addTask,
-                deleteTask
+                deleteTask,
+                modifiedTask
             }}
         >
             {children}

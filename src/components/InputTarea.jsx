@@ -5,7 +5,7 @@ export const InputTarea = () => {
 
     const { addTask } = useGlobalState()
 
-    const [nameTask, setNameTask] = useState()
+    const [nameTask, setNameTask] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +14,7 @@ export const InputTarea = () => {
             nameTask,
             status: false
         })
+        setNameTask('')
     }
 
     return (
