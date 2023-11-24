@@ -1,20 +1,23 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
 import { GlobalProvider } from './context/GlobalState'
-import { BrowserRouter as Route, Routes} from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Chat } from './pages/Chat'
 
 export const App = () => {
 
+
   return (
     <GlobalProvider>
-        <Navbar/>
+      <BrowserRouter>
+        <Navbar />
         <Routes>
-          <Route path='/' exact component={<Home/>} />
-          <Route path='/chat' component={<Chat/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/chat' element={<Chat />} />
         </Routes>
-    </GlobalProvider>
+    </BrowserRouter>
+    </GlobalProvider >
 
 
   )
