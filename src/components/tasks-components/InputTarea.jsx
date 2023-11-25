@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useGlobalState } from '../../context/GlobalState'
+import '../styles-components/input-task.css'
 
 export const InputTarea = () => {
 
@@ -20,14 +21,14 @@ export const InputTarea = () => {
     return (
         <form
             onSubmit={onSubmit}
-            className='d-flex justify-content-center gap-2 my-2'>
+            className='d-flex justify-content-center gap-2 my-4'>
             <input
                 type="text"
                 value={nameTask}
                 onChange={(e) => setNameTask(e.target.value)}
-                placeholder='Nueva tarea'
+                placeholder='Add a new task ...'
             />
-            <button>Add Task</button>
+            <button className='btn-save'>Save Task</button>
         </form>
     )
 }

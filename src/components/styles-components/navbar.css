@@ -9,7 +9,18 @@
 }
 
 .navbar-principal {
-    background-color: var(--color-categoria);
+    background-color: var(--prioridad-high);
     color: white;
     font-size: 1.6rem;
+}
+
+ul a {
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+    li {
+        margin-inline: 1rem;
+    }
 }
