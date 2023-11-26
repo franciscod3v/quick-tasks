@@ -15,7 +15,13 @@ export const Navbar = () => {
                             <Link to='/'>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/chat'>Chat</Link>
+                            <Link to='/sites'>Sites</Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/time'>Timer</Link>
+                        </li>
+                        <li>
+                            <Link to='/movies'>Recommend Movies</Link>
                         </li>
                     </ul>
                 </div>

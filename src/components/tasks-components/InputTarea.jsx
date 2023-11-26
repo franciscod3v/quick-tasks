@@ -10,6 +10,11 @@ export const InputTarea = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        if (nameTask.trim() === '') {
+            alert('Tarea vacia')
+            setNameTask('')
+            return
+        }
         addTask({
             id: window.crypto.randomUUID(),
             nameTask,
