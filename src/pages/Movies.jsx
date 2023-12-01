@@ -15,6 +15,9 @@ export const Movies = () => {
         <ul>
             {error && <li>Error: {error}</li>}
             {loading && <li>Loading...</li>}
+            {data?.map((item) => (
+                <li></li>
+            ))}
         </ul>
     </div>
   )
