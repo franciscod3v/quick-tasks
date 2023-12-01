@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const useFetch = (url) => {
+export const useFetch = (url, option) => {
 
     const [data, setData] = useState(null)
 
@@ -8,34 +8,15 @@ export const useFetch = (url) => {
 
     const [error, setError] = useState(null)
 
-    const [controller, setController] = useState(null)
-
     useEffect(() => {
-        const abortController = new AbortController()
-        setController(abortController)
-
-        fetch(url, { signal: abortController.signal })
-            .then((response) => response.json)
+        fetch(url, option)
+            .then(response => response.json())
             .then(json => setData(json))
-            .catch(error => {
-                if (error.name === "AbortError") {
-                    console.log("Cancelled request")
-                } else {
-                    setError(error)
-                }
-            })
+            .catch(error => setError(error))
             .finally(() => setLoading(false))
-
-        return () => abortController.abort()
     }, [])
 
-    const handleCancelRequest = () => {
-        if (controller) {
-            controller.abort()
-            setError("Cancelled Request")
-        }
-    }
+    return { data, loading, error }
 
-    return { data, loading, error, handleCancelRequest }
 
 }
