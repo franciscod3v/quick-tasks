@@ -1,3 +1,5 @@
+import { CardMovie } from "../components/movies-components/CardMovie"
+import { PopularMovies } from "../components/movies-components/PopularMovies"
 import { useFetch } from "../hooks/useFetch"
 
 const URL = 'https://api.themoviedb.org/3'
@@ -13,7 +15,8 @@ export const Movies = () => {
         }
     }
 
-    const {data, loading, error} = useFetch(`${URL}/genre/movie/list?language=en`, optionsFetch)
+    //Para populares
+    const {data, loading, error} = useFetch(`${URL}/movie/popular?language=es-US&page=1`, optionsFetch)
 
   return (
     <div>
@@ -24,9 +27,7 @@ export const Movies = () => {
         <ul>
             {error && <li>Error: {error}</li>}
             {loading && <li>Loading...</li>}
-            {data?.genres.map((item) => (
-                <li key={item.id}>{item.name}</li>
-            ))}
+            <PopularMovies/>
         </ul>
     </div>
   )
