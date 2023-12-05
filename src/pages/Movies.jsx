@@ -1,5 +1,7 @@
 import { PopularMovies } from "../components/movies-components/PopularMovies"
-import { useFetch } from "../hooks/useFetch"
+import { UpcomingMovies } from "../components/movies-components/UpcomingMovies"
+import { PopularSeries } from "../components/series-components/PopularSeries"
+import { TopSeries } from "../components/series-components/TopSeries"
 
 const URL = 'https://api.themoviedb.org/3'
 const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDUxYzQ4MGY2OTgwNTQwZjY5ZmJiYzBmYWU3OWMxZiIsInN1YiI6IjY0YzJlMDcwMzUyMGU4MDEzOTk0MTI2NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sWEoPwpd0yC4IVDiPfVewjTY5BCYMRJ-CW8u9Nt0PTw'
@@ -12,15 +14,22 @@ export const Movies = () => {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-5">
-                        <PopularMovies />
+                        <UpcomingMovies />
                     </div>
                     <div className="col-md-5">
                         <PopularMovies />
                     </div>
+                    <div className="col-md-5">
+                        <PopularSeries />
+                    </div>
+                    <div className="col-md-5">
+                        <TopSeries />
+                    </div>
+
                 </div>
 
 
-                
+
             </div>
 
         </div>

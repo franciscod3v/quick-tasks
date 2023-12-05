@@ -6,7 +6,7 @@ button.btn-detalles {
     border-radius: 5px;
 }
 
-button.btn-detalles:hover {
+.btn-detalles:hover {
     opacity: 80%;
     scale: 1.1;
 }
@@ -14,4 +14,14 @@ button.btn-detalles:hover {
 .card-title {
     font-size: 1.6rem;
     text-align: center;
+    color: #2D41A7;
+}
+
+.card-sinopsis {
+    text-align: justify;
+    color: #2D41A7;
+}
+
+.card {
+    background-color: #F4F2FF;
 }

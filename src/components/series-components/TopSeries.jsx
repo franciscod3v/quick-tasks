@@ -1,9 +1,8 @@
-import { CardMovie } from './CardMovie'
+import React from 'react'
 import { useFetch } from '../../hooks/useFetch'
-import '../styles-components/popular-movies.css'
+import { CardSeries } from './CardSeries'
 
-export const PopularMovies = () => {
-
+export const TopSeries = () => {
     const URL = 'https://api.themoviedb.org/3'
     const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDUxYzQ4MGY2OTgwNTQwZjY5ZmJiYzBmYWU3OWMxZiIsInN1YiI6IjY0YzJlMDcwMzUyMGU4MDEzOTk0MTI2NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sWEoPwpd0yC4IVDiPfVewjTY5BCYMRJ-CW8u9Nt0PTw'
 
@@ -16,25 +15,25 @@ export const PopularMovies = () => {
     }
 
     //Para populares
-    const { data, loading, error } = useFetch(`${URL}/movie/popular?language=es-US&page=2`, optionsFetch)
+    const { data, loading, error } = useFetch(`${URL}/tv/top_rated?language=es-US&page=1`, optionsFetch)
 
     return (
         <>
             <div className='popular-movies-content'>
                 <h2 className='text-center'>
-                    Popular Movies
+                    Top Rated Series
                 </h2>
-                <div id="carouselExampleFade" className="carousel slide carousel-fade">
+                <div id="carouselTopSeries" className="carousel slide carousel-fade">
                     <div className="carousel-inner">
                         {data?.results.map((item, index) => (
-                            <CardMovie key={item.id} titulo={item.title} urlImagen={item.backdrop_path} index={index} id={item.id} fechaEstreno={item.release_date} overview={item.overview}/>
+                            <CardSeries key={item.id} name={item.name} urlImagen={item.backdrop_path} index={index} id={item.id} fechaEstreno={item.first_air_date} overview={item.overview} />
                         ))}
                     </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselTopSeries" data-bs-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Previous</span>
                     </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselTopSeries" data-bs-slide="next">
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
