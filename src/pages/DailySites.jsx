@@ -26,6 +26,8 @@ export const DailySites = () => {
         })
 
         setSite('')
+        setUser('')
+        setPassword('')
     }
 
     return (
