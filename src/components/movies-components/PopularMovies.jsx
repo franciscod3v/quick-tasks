@@ -1,6 +1,6 @@
-import React from 'react'
 import { CardMovie } from './CardMovie'
 import { useFetch } from '../../hooks/useFetch'
+import '../styles-components/popular-movies.css'
 
 export const PopularMovies = () => {
 
@@ -19,20 +19,29 @@ export const PopularMovies = () => {
     const { data, loading, error } = useFetch(`${URL}/movie/popular?language=es-US&page=1`, optionsFetch)
 
     return (
-        <div id="carouselExampleFade" className="carousel slide carousel-fade">
-            <div className="carousel-inner">
-                {data?.results.map((item, index) => (
-                    <CardMovie key={item.id} titulo={item.title} urlImagen={item.backdrop_path} index={index}/>
-                ))}
+        <>
+            <div className='popular-movies-content'>
+                <h2 className='text-center'>
+                    Popular Movies
+                </h2>
+                <div id="carouselExampleFade" className="carousel slide carousel-fade">
+                    <div className="carousel-inner">
+                        {data?.results.map((item, index) => (
+                            <CardMovie key={item.id} titulo={item.title} urlImagen={item.backdrop_path} index={index} id={item.id} />
+                        ))}
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
-        </div>
+
+        </>
+
     )
 }

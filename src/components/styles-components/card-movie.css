@@ -1,0 +1,17 @@
+button.btn-detalles {
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: #2D41A7;
+    border-radius: 5px;
+}
+
+button.btn-detalles:hover {
+    opacity: 80%;
+    scale: 1.1;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    text-align: center;
+}

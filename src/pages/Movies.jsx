@@ -1,4 +1,3 @@
-import { CardMovie } from "../components/movies-components/CardMovie"
 import { PopularMovies } from "../components/movies-components/PopularMovies"
 import { useFetch } from "../hooks/useFetch"
 
@@ -7,28 +6,23 @@ const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDUxYzQ4MGY2OTgwNTQwZjY5Z
 
 export const Movies = () => {
 
-    const optionsFetch = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${ACCESS_TOKEN}`
-        }
-    }
+    return (
+        <div>
+            <h1 className="text-center">Recommend Movies</h1>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-5">
+                        <PopularMovies />
+                    </div>
+                    <div className="col-md-5">
+                        <PopularMovies />
+                    </div>
+                </div>
 
-    //Para populares
-    const {data, loading, error} = useFetch(`${URL}/movie/popular?language=es-US&page=1`, optionsFetch)
 
-  return (
-    <div>
-        <h1>Listas</h1>
-        <button>
-            Cancel Request
-        </button>
-        <ul>
-            {error && <li>Error: {error}</li>}
-            {loading && <li>Loading...</li>}
-            <PopularMovies/>
-        </ul>
-    </div>
-  )
+                
+            </div>
+
+        </div>
+    )
 }
