@@ -6,11 +6,6 @@ button.btn-detalles {
     border-radius: 5px;
 }
 
-.btn-detalles:hover {
-    opacity: 80%;
-    scale: 1.1;
-}
-
 .card-title {
     font-size: 1.6rem;
     text-align: center;
@@ -20,6 +15,7 @@ button.btn-detalles {
 .card-sinopsis {
     text-align: justify;
     color: #2D41A7;
+    font-size: 1.2rem;
 }
 
 .card {

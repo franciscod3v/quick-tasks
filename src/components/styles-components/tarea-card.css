@@ -20,18 +20,6 @@
     font-size: 1.4rem;
 }
 
-.tareaCard-container div div .priority-token {
-    width: 2rem;
-    background-color: red;
-    color: transparent;
-    border-radius: 20%;
-}
-
-.tareaCard-container div .category {
-    color: var(--color-categoria);
-    font-size: 1.4rem;
-}
-
 button {
     background-color: var(--fondo-tarea);
 }
@@ -44,6 +32,10 @@ button .bi-check-circle-fill {
 button .bi-x-circle-fill {
     color: var(--color-categoria);
     font-size: 2rem;
+}
+
+button:hover {
+    scale: 1.05;
 }
 
 @media screen and (min-width: 375px) {

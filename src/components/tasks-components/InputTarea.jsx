@@ -31,7 +31,7 @@ export const InputTarea = () => {
                 type="text"
                 value={nameTask}
                 onChange={(e) => setNameTask(e.target.value)}
-                placeholder='Add a new task ...'
+                placeholder='Hey Jaru! Add a new task here'
             />
             <button className='btn-save'>Save Task</button>
         </form>

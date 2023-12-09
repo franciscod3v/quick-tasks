@@ -11,8 +11,6 @@ export const useGlobalState = () => {
 
 const initialState = {
     tasks: [],
-    sites: [],
-    timer: []
 }
 
 export const GlobalProvider = ({ children }) => {
@@ -39,30 +37,15 @@ export const GlobalProvider = ({ children }) => {
         })
     }
 
-    //Sites methods
-    const addSite = (site) => {
-        siteDispatch({
-            type: 'ADD_SITE',
-            payload: site
-        })
-    }
-
     const [state, dispatch] = useReducer(AppReducer, initialState,
         () => {
             const localData = localStorage.getItem('tasks')
             return localData ? JSON.parse(localData) : initialState
         })
 
-    const [siteState, siteDispatch] = useReducer(AppReducer, initialState,
-        () => {
-            const localData = localStorage.getItem('sites')
-            return localData ? JSON.parse(localData) : initialState
-        })
-
     useEffect(() => {
         localStorage.setItem('tasks', JSON.stringify(state))
-        localStorage.setItem('sites', JSON.stringify(siteState))
-    }, [state, siteState])
+    }, [state])
 
     return (
         <Context.Provider
@@ -72,7 +55,6 @@ export const GlobalProvider = ({ children }) => {
                     addTask,
                     deleteTask,
                     modifiedTask,
-                    addSite
                 }
             }
         >

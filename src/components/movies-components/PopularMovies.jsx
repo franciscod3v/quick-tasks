@@ -16,7 +16,7 @@ export const PopularMovies = () => {
     }
 
     //Para populares
-    const { data, loading, error } = useFetch(`${URL}/movie/popular?language=es-US&page=2`, optionsFetch)
+    const { data, loading, error } = useFetch(`${URL}/movie/popular?language=es-US&page=1`, optionsFetch)
 
     return (
         <>
